@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//import "fmt"
+
 //
 func RetrieveAmountMatchingSocksPairs(sockAmount uint8, sockColourCodes []uint8) int {
 
