@@ -4,12 +4,12 @@ import "fmt"
 
 //import "fmt"
 
-//
-func RetrieveAmountMatchingSocksPairs(sockAmount uint8, sockColourCodes []uint8) int {
+// Retrieve the mount of matching socks colours codes pairs
+func RetrieveAmountMatchingSocksPairs(socksAmount uint8, sockColourCodes []uint8) int {
 
 	const limit uint8 = 100
 
-	if sockAmount != uint8(len(sockColourCodes)) {
+	if socksAmount != uint8(len(sockColourCodes)) {
 		return 0
 	}
 
@@ -17,14 +17,14 @@ func RetrieveAmountMatchingSocksPairs(sockAmount uint8, sockColourCodes []uint8)
 
 	if uint8(len(sockColourCodes)) > limit {
 		sockColourCodesLimit = sockColourCodes[0 : limit+1]
-		sockAmount = limit
+		socksAmount = limit
 	}
 
 	var matches int = 0
 
-	for i := uint8(0); i < sockAmount; i++ {
+	for i := uint8(0); i < socksAmount; i++ {
 		if sockColourCodesLimit[i] != 0 {
-			for j := i + 1; j < sockAmount; j++ {
+			for j := i + 1; j < socksAmount; j++ {
 				if sockColourCodesLimit[i] == sockColourCodesLimit[j] {
 					matches++
 					sockColourCodesLimit[j] = 0
